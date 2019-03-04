@@ -28,7 +28,7 @@
     }
 
     function onMessage(evt) {
-        alert(evt.data);
+        console.log(evt.data);
     }
     function onError() {}
     function onClose() {}
@@ -37,7 +37,7 @@
         if (websocket.readyState == websocket.OPEN) {
             var msg = document.getElementById("inputMsg").value;
             websocket.send(msg);//调用后台handleTextMessage方法
-            alert("发送成功!");
+            websocket.send(['data', 'onedata']);
         } else {
             alert("连接失败!");
         }

@@ -53,7 +53,9 @@ public class SpringWebSocketHandler extends TextWebSocketHandler {
      */
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+        System.out.println("message:" + message.getPayload());
         super.handleTextMessage(session, message);
+        session.sendMessage(message);
     }
 
     @Override
